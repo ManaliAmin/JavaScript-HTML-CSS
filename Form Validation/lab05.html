@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+  <head>
+     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="lab05.css">
+    <!-- // <script src="lab05.js"></script> -->
+    <title>SignUp</title>
+  </head>
+  <body>
+    <p id="fnamecheck"></p>
+
+     <main>
+      <header><h1>JobSearch.com</h1></header>
+     <div>
+      <h2> Create Your Account </h2>
+      <p> * Required Information </p>
+           <form method="post" action="https://httpbin.org/post" onsubmit='return formValidation()'>
+               <fieldset>
+                    <legend>Personal Information</legend>
+                      <label for="email" >Email <span>*</span></label> <input type="email" name="email" id="email" autofocus required/><br>
+
+                      <label for="paswd">Password <span>*</span></label>  <input type="password" name="password" onchange="passfun(this.value)" id="paswd" required />  <br>
+                      <div id="passtext"></div>
+                      <label for="renter">Retype Password <span>*</span></label><input type="password" name="retype" onchange="matchpassfun()" id="renter" required /> <br />
+                      <div id="checkpasstext"></div>
+                      <label for="fname" >First Name <span>*</span></label> <input type="text" name="First name" id="fname" onchange="fnamefun(this.value)" required /><br><br>
+                      <div id="checkfname"></div>
+                      <label for="lname" >Last name <span>*</span></label><input type="text" name="Last name" id="lname" onchange="lnamefun(this.value)" required /><br>
+                      <div id="checklname"></div>
+                      <label for="phone" >Phone Number <span>*</span></label><input type="tel" name="telephone" id="phone" onchange="phonefun(this.value)" placeholder="999-999-9999" required /><br>
+                       <div id="checkphone"></div>
+                      <label for="address" >Address <span>*</span></label><input type="text" id="address"  name="Address" required /><br>
+                      <label for="city">City <span>*</span></label><input type="text" id="city"  name="city" required /><br>
+                      <label for ="Province" >Province <span>*</span></label>
+                            <select id= "Province" name="province">
+                               <optgroup label="Provinces">
+                                <option value="AB">Alberta</option>
+                                  <option value="BC">British Columbia</option>
+                                  <option value="MB">Manitoba</option>
+                                  <option value="NB">New Brunswick</option>
+                                  <option value="NL">Newfoundland and Labrador</option>
+                                  <option value="NS">Nova Scotia</option>
+                                  <option value="ON">Ontario</option>
+                                  <option value="PE">Prince Edward Island</option>
+                                  <option value="QC">Quebec</option>
+                                  <option value="SK">Saskatchewan</option>
+                               </optgroup>
+                               <optgroup Label="Territories">
+                                  <option value="NT">Northwest Territories</option>
+                                  <option value="NU">Nunavut</option>
+                                  <option value="YT">Yukon</option>
+                               </optgroup>
+                            </select><br>
+                      <label for="country" >Country <span>*</span></label>
+                             <input type="text" name="country" id ="country"/>
+                              <datalist id="count">
+                               <option value="Canada">India</option>
+                               <option value="United States">United States</option>
+                               <option value="United Kingdom">United Kingdom</option>
+                               <option value="India">Germany</option>
+                               <option value="France">France</option>
+                             </datalist>  <br>
+
+               </fieldset>
+               <fieldset>
+                  <legend>Education</legend>
+                     <label for="school">School <span>*</span></label> <input type="text" id="school" name="school" required /><br>
+                      <label for="program">Program <span>*</span></label><input type="text"  name="program" id="program" required /><br>
+                      <label for ="level" > Education Level <span>*</span> </label>
+                         <select name="level" id="level">
+                            <option value="0" disabled="disabled" selected="selected"> -Select- </option>
+                            <option value="1">  Technical Diploma </option>
+                            <option value="2">  College Diploma </option>
+                            <option value="3"> Bachelor's Degree</option>
+                            <option value="4"> Master's Degree  </option>
+                            <option value="5"> Others </option>
+                          </select>
+
+                       <fieldset id="education">
+                         <legend id="newledgent">Education Status</legend>
+                         <input type="radio" name="status"  value="Graduated" id="graduated"/>Graduated<br>
+                         <input type="radio" name="status"  value="Current Enrolled" id="enrolled"/>Current Enrolled<br>
+                         <input type="radio" name="status"  value="Did not Graduated" id="nopgraduate"/>Did Not Graduated<br>
+                       </fieldset>
+                       <label for="date" >Graduation Year <span>*</span></label><input type="date" id="date" name="date" required /><br>
+
+              </fieldset>
+              <fieldset>
+                    <legend>Work Experience</legend>
+                      <label for="Employer">Employer</label> <input type="text" id="Employer"  name="emp"/><br>
+                      <label for="JobTitle">Job Title</label><input type="text" id="JobTitle"  name="emp" /><br>
+                      <label for="duty">Job Duty</label>
+                         <textarea name="comments" cols="40" rows="5" id="duty"></textarea><br>
+                      <label for ="wrkyear"> Work Year </label>
+                      <input type="number" id="wrkyear" name="wrkyear" min="1" max="20"><br>
+
+              </fieldset>
+              <fieldset>
+                   <legend>Attachments</legend>
+                   <label for="Attachment" > Attachments </label>
+                      <input type="file" id="Attachment" name="att" multiple>
+              </fieldset>
+              <div class="buttons">
+               <input type="reset" value="Reset" class="buttonSize">
+               <input type="submit" value="Apply" class="buttonSize">
+</div>
+           </form>
+    </div>
+   </main>
+  <script src="lab05.js"></script>
+
+  </body>
+</HTML>
